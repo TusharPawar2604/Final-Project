@@ -1,0 +1,52 @@
+@font-face {
+    font-family: brand;
+    src: url(./8186twklausanne.ttf);
+}
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+html,body{
+   height: 100%;
+   width: 100%;
+}
+body{
+    background-color: #F1EEE4;
+}
+#page1{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-color: #dadada;
+    padding-top: 3vw;
+    padding-left: 3vw;
+    padding-bottom: 55vh;
+    background-position: 50% 20%;
+    background-image: url(https://images.unsplash.com/photo-1504051771394-dd2e66b2e08f?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+.page1-text{
+    height: fit-content;
+    overflow: hidden;
+}
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(108, 108, 108);
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+#page3{
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(60, 60, 60);
+}
+.page1-text h1{
+    font-size: 18vw;
+    font-family: brand;
+    line-height: 16vw;
+    letter-spacing: -10px;
+    color: #ffffff;
+    mix-blend-mode: exclusion;
+}
