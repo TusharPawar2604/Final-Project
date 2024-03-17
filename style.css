@@ -2,6 +2,11 @@
     font-family: brand;
     src: url(./8186twklausanne.ttf);
 }
+@font-face {
+    font-family: brand1;
+    font-weight: 200;
+    src: url(./8186twklausanne.ttf);
+}
 *{
    margin: 0;
    padding: 0;
@@ -18,35 +23,102 @@ body{
     min-height: 100vh;
     width: 100%;
     position: relative;
-    background-size: cover;
     background-color: #dadada;
+    background-image: url(https://images.unsplash.com/photo-1504051771394-dd2e66b2e08f?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
     padding-top: 3vw;
     padding-left: 3vw;
     padding-bottom: 55vh;
     background-position: 50% 20%;
-    background-image: url(https://images.unsplash.com/photo-1504051771394-dd2e66b2e08f?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
 }
 .page1-text{
-    height: fit-content;
     overflow: hidden;
+    height: fit-content;
+}
+.page1-text h1{
+    font-size: 18vw;
+    letter-spacing: -10px;
+    line-height: 16vw;
+    color: #ffffff;
+    mix-blend-mode: exclusion;
+    font-family: brand;
 }
 #page2{
     min-height: 100vh;
     width: 100%;
-    background-color: rgb(108, 108, 108);
+    background-color: black;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
 }
-#page3{
-    min-height: 100vh;
-    width: 100%;
-    background-color: rgb(60, 60, 60);
+.page1-text h1 span{
+    display: inline-block;
 }
-.page1-text h1{
-    font-size: 18vw;
+nav svg{
+    height: 2.5vw;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+}
+.nav-part2{
+    width: 8%;
+}
+.nav-part2 h3{
     font-family: brand;
-    line-height: 16vw;
-    letter-spacing: -10px;
-    color: #ffffff;
-    mix-blend-mode: exclusion;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 1.2vw;
+    font-weight: 300;
+    mix-blend-mode: difference;
+    color: black;
+
+}
+.cursor{
+    height: 17px;
+    width: 17px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #bedf03;
+    z-index: 999;
+}
+.middle-text{
+    color: white;
+    font-family: brand;
+    padding: 5vw;
+}
+.middle-text h1{
+    width: 75%; 
+    font-size: 4.5vw;
+    line-height: 9vh;
+    margin-top: 2vw;
+    letter-spacing: 2px;
+    font-family: gilroy;
+    font-weight: 200;
+}
+.middle-text p{
+    font-size: 1.2vw;
+    color: #cdf002;
+    font-weight: 700;
+}
+.middle-text h1 span{
+    display: inline-block;
+}
+.middle-text button{
+    margin-top: 3vw;
+    padding: 15px 60px;
+    border-radius: 25px;
+    font-size: 1vw;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+.middle-text button:hover {
+    background-color: #bedf03;
+    scale: 1.1;
 }
