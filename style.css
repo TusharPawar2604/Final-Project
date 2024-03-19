@@ -1,11 +1,17 @@
 @font-face {
     font-family: brand;
     src: url(./8186twklausanne.ttf);
+    font-weight: 500;
 }
 @font-face {
     font-family: brand1;
-    font-weight: 200;
-    src: url(./8186twklausanne.ttf);
+    src: url(./6035twklausanne.woff2);
+    font-weight: 900;
+}
+@font-face {
+    font-family: brand2;
+    src: url(./3856NeueMachina.ttf);
+    font-weight: 100;
 }
 *{
    margin: 0;
@@ -58,9 +64,9 @@ nav svg{
 }
 nav{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 2vw 1vw;
     position: fixed;
     z-index: 99;
     width: 100%;
@@ -79,12 +85,32 @@ nav{
 
 }
 .cursor{
-    height: 17px;
-    width: 17px;
-    position: absolute;
-    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    position:fixed;
+    border-radius: 50px;
     background-color: #bedf03;
-    z-index: 999;
+    z-index: 99;
+    /* padding: 5px; */
+    white-space: nowrap;
+    overflow: hidden;
+}
+.cursor h5{
+text-transform: uppercase;
+display: inline-block;
+animation-name: cursor-move;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+animation-duration: 1s;
+font-family: brand;
+}
+@keyframes cursor-move {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
 }
 .middle-text{
     color: white;
@@ -97,8 +123,7 @@ nav{
     line-height: 9vh;
     margin-top: 2vw;
     letter-spacing: 2px;
-    font-family: gilroy;
-    font-weight: 200;
+    font-family: brand1;
 }
 .middle-text p{
     font-size: 1.2vw;
@@ -121,4 +146,64 @@ nav{
 .middle-text button:hover {
     background-color: #bedf03;
     scale: 1.1;
+}
+#page3{
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+}
+#page3>h1{
+    text-align: center;
+    color: white;
+    font-family: brand;
+    text-transform: uppercase;
+    font-size: 7vw;
+    line-height: 7vw;
+}
+#container{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10vh 12vw;
+  justify-content: space-between;
+  gap: 4vw;
+}
+.card{
+    height: 100vh;
+    width: 40%;
+    color: white;
+    font-family: brand2;
+    overflow: hidden;
+}
+.card .image-div{
+    height: 80%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+
+}
+.card img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease-in-out 0.5s;
+}
+.card img:hover {
+    scale: 1.15;
+}
+.card video:hover {
+    scale: 1.15;
+}
+.card video{
+    height: 100%;
+    width: 100%;
+    transition: all ease-in-out 0.5s;
+    object-fit: cover;
+}
+.card h2{
+    font-size: 1.5vw;
+}
+.card p{
+    font-size: 0.8vw;
+    color: #dadada;
 }
