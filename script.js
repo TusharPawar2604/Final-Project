@@ -82,14 +82,14 @@ ello.forEach(function(dets){
 
 
 gsap.from(".middle-text h1 span",{
-  Y:10,
+  x:10,
   opacity:0,
   stagger:0.1,
-  duration:0.6,
+  duration:0.5,
   scrollTrigger:{
     trigger:"#page2",
     scroller:"#main",
-    markers:true,
+    // markers:true,
     start:"top 53%",
     end:" top 80%"
   }
@@ -120,11 +120,137 @@ allImages.forEach(function(elem){
 })
 }
 
+function strechLine(){
+  var string = document.querySelectorAll("#string")
+  var myPath = d="M 10 80 Q 500 80 990 80";
+  var finalPath = d="M 10 80 Q 500 80 990 80"
+  string.forEach(function(elem){
+    elem.addEventListener("mousemove",function(dets){
+      myPath = `M 10 80 Q ${dets.x} ${dets.y} 990 80`
+      gsap.to("svg path",{
+          attr:({d:myPath}),
+          ease: "elastic.out(1,0.2)",
+          duration:1.5,
+      })
+  })
+  elem.addEventListener("mouseleave",function(dets){
+      gsap.to("svg path",{
+          attr:({d:finalPath}),
+          ease: "elastic.out(1,0.2)",
+          duration:1.5,
+  
+      })
+  })
+  })
+}
 
 
-locomotive()
-Page1Animation()
-Page2TextAnimation()
-cursorImageTextAnimation()
+function movingimages(){
+  
+
+var elementContainer = document.querySelector("#element-container")
+
+elementContainer.addEventListener("mouseenter", function () {
+    gsap.to("#moving-image", {
+        opacity: 1
+    })
+})
+
+elementContainer.addEventListener("mouseleave", function () {
+    gsap.to("#moving-image", {
+        opacity: 0
+    })
+})
+
+var allElements = document.querySelectorAll(".element")
+var movingImageDiv = document.querySelector("#moving-image")
+var moveImg = document.querySelector("#moving-image img")
+
+
+allElements.forEach(function (elem) {
+    elem.addEventListener("mouseenter", function () {
+        let image = elem.getAttribute("data-image")
+        gsap.to(moveImg,{
+            attr:{src:image},
+        })
+    })
+    elementContainer.addEventListener("mousemove",function(dets){
+        gsap.to("#moving-image",{
+            left:`${dets.x - elementContainer.getBoundingClientRect().x}`,
+            top:`${dets.y - elementContainer.getBoundingClientRect().y}`,
+            duration:3,
+            ease:"power1.out"
+        })
+        
+    })
+})
+}
+function colorChangingEffect(){
+  var pinky = document.querySelector('#pink-wala-div-color')
+
+var page6 = document.querySelector('#page6')
+
+var blue = document.querySelector('#blue-wala-div-color')
+
+pinky.addEventListener("mouseenter",function(){
+  gsap.to(page6,{
+        backgroundColor:'pink'
+  })})
+  pinky.addEventListener("mouseleave",function(){
+    gsap.to(page6,{
+          backgroundColor:'#F1EEE4'
+    })})
+    blue.addEventListener("mouseenter",function(){
+      gsap.to(page6,{
+            backgroundColor:'lightblue'
+      })})
+      pinky.addEventListener("mouseleave",function(){
+        gsap.to(page6,{
+              backgroundColor:'#F1EEE4'
+        })})
+}
+function lineAndCursorWalaMarqeeAnimation(){
+  window.addEventListener("wheel", function(dets){
+    if(dets.deltaY > 0){
+      gsap.to("#hello",{
+        transform : "translateX(-50%)" ,
+        ease : "none" ,
+        repeat : -1 ,
+        duration : 15
+      })
+      gsap.to("#hello img",{
+      rotate : 180 
+      })
+  
+    }
+    else{
+      gsap.to("#hello",{
+        transform : "translateX(0%)" ,
+        ease : "none" ,
+        repeat : -1 ,
+        duration : 15
+      })
+      gsap.to("#hello img",{
+        rotate : 0
+        })
+    }
+  })
+  
+ }
+  
+  
+
+
+movingimages()
+  strechLine()
+  locomotive()
+  Page1Animation()
+  Page2TextAnimation()
+  cursorImageTextAnimation()
+colorChangingEffect()
+lineAndCursorWalaMarqeeAnimation()
+
+
+
 
 
