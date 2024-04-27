@@ -216,7 +216,7 @@ function lineAndCursorWalaMarqeeAnimation(){
         transform : "translateX(-50%)" ,
         ease : "none" ,
         repeat : -1 ,
-        duration : 15
+        duration : 5
       })
       gsap.to("#hello img",{
       rotate : 180 
@@ -241,14 +241,16 @@ function lineAndCursorWalaMarqeeAnimation(){
   
 
 
-movingimages()
-  strechLine()
-  locomotive()
-  Page1Animation()
-  Page2TextAnimation()
-  cursorImageTextAnimation()
-colorChangingEffect()
-lineAndCursorWalaMarqeeAnimation()
+
+
+  movingimages()
+    strechLine()
+    locomotive()
+    Page1Animation()
+    Page2TextAnimation()
+    cursorImageTextAnimation()
+  colorChangingEffect()
+  lineAndCursorWalaMarqeeAnimation()
 
 
 
