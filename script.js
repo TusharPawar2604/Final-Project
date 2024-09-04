@@ -102,9 +102,11 @@ var text = ""
 allImages.forEach(function(elem){
   elem.addEventListener("mouseenter",function(){
     text = elem.getAttribute("data-text")
-    cursor.innerHTML = `<h5>${text}</h5> <h5>${text}</h5> <h5>${text}</h5>`
+    cursor.innerHTML = `<h5>${text}</h5> <h5>${text}</h5> <h5>${text}</h5> <h5>${text}</h5>`
     gsap.to(cursor ,{
-      width:"160px"
+      width:"200px",
+      height:"30px",
+      fontSize:"22px"
     })
     gsap.from(".cursor h5",{
       opacity:0,
@@ -113,7 +115,9 @@ allImages.forEach(function(elem){
   })
   elem.addEventListener("mouseleave",function(){
     gsap.to(cursor ,{
-      width:"20px"
+      width:"20px",
+      height:"20px",
+
     })
     cursor.innerHTML = `<h5></h5>`
   })
@@ -127,14 +131,14 @@ function strechLine(){
   string.forEach(function(elem){
     elem.addEventListener("mousemove",function(dets){
       myPath = `M 10 80 Q ${dets.x} ${dets.y} 990 80`
-      gsap.to("svg path",{
+      gsap.to("#main svg path",{
           attr:({d:myPath}),
           ease: "elastic.out(1,0.2)",
           duration:1.5,
       })
   })
   elem.addEventListener("mouseleave",function(dets){
-      gsap.to("svg path",{
+      gsap.to("#main svg path",{
           attr:({d:finalPath}),
           ease: "elastic.out(1,0.2)",
           duration:1.5,
@@ -209,6 +213,63 @@ pinky.addEventListener("mouseenter",function(){
               backgroundColor:'#F1EEE4'
         })})
 }
+
+
+function pinkBlueDivImageMoveAnimation (){
+  
+  var page6_first = document.querySelector("#page6-first")
+  var ghumne_wali_image = document.querySelector("#ghumne-wali-image")
+  var ghumne_wali_image_Img = document.querySelector("#ghumne-wali-image img")
+
+  page6_first.addEventListener("mouseenter", function () {
+      gsap.to(ghumne_wali_image, {
+          opacity: 1
+      })
+  })
+  page6_first.addEventListener("mouseleave", function () {
+      gsap.to(ghumne_wali_image, {
+          opacity: 0
+        })
+      })
+      var pink_wala_div_color = document.querySelector("#pink-wala-div-color")
+      var blue_wala_div_color = document.querySelector("#blue-wala-div-color")
+
+  pink_wala_div_color.addEventListener("mouseenter",function(dets){
+    let image = pink_wala_div_color.getAttribute('data-image')
+    gsap.to(ghumne_wali_image_Img,{
+              attr:{src:image},
+            })
+           page6_first.addEventListener("mousemove",function(dets){
+              gsap.to(ghumne_wali_image,{
+                left:`${dets.x - page6_first.getBoundingClientRect().x}`,
+                top:`${dets.y - page6_first.getBoundingClientRect().y}`,
+                duration:3,
+                      ease:"power1.out"
+                  })
+                  
+              })
+  })
+  
+  blue_wala_div_color.addEventListener("mouseenter",function(dets){
+    let image = blue_wala_div_color.getAttribute('data-image')
+    gsap.to(ghumne_wali_image_Img,{
+              attr:{src:image},
+            })
+           page6_first.addEventListener("mousemove",function(dets){
+              gsap.to(ghumne_wali_image,{
+                left:`${dets.x - page6_first.getBoundingClientRect().x}`,
+                      top:`${dets.y - page6_first.getBoundingClientRect().y}`,
+                      duration:3,
+                      ease:"power1.out"
+                  })
+                  
+              })
+  })
+  
+}
+
+
+
 function lineAndCursorWalaMarqeeAnimation(){
   window.addEventListener("wheel", function(dets){
     if(dets.deltaY > 0){
@@ -216,7 +277,7 @@ function lineAndCursorWalaMarqeeAnimation(){
         transform : "translateX(-50%)" ,
         ease : "none" ,
         repeat : -1 ,
-        duration : 5
+        duration :4
       })
       gsap.to("#hello img",{
       rotate : 180 
@@ -228,7 +289,7 @@ function lineAndCursorWalaMarqeeAnimation(){
         transform : "translateX(0%)" ,
         ease : "none" ,
         repeat : -1 ,
-        duration : 15
+        duration :4
       })
       gsap.to("#hello img",{
         rotate : 0
@@ -239,20 +300,32 @@ function lineAndCursorWalaMarqeeAnimation(){
  }
   
   
+// gsap.from("#page3 h1",{
+//   y:100,
+//   duration:0.5,
+//   opacity:0,
+//   stagger:0.3,
+//  scrollTrigger:{
+//   trigger:"#page3",
+//   scroller:"#main",
+//   markers:true,
+//   start:"top 23.5%"
+//  }
+// })
+  
 
 
 
 
-  movingimages()
-    strechLine()
-    locomotive()
-    Page1Animation()
-    Page2TextAnimation()
-    cursorImageTextAnimation()
-  colorChangingEffect()
+
+ movingimages()
+   strechLine()
+   locomotive()
+   Page1Animation()
+   Page2TextAnimation()
+   cursorImageTextAnimation()
+ colorChangingEffect()
+ pinkBlueDivImageMoveAnimation()
   lineAndCursorWalaMarqeeAnimation()
-
-
-
 
 
