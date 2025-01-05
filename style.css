@@ -453,7 +453,8 @@ footer h1 {
     text-align: center;
 }
 footer span{
- border-bottom: 1px solid mwhite;
+ border-bottom: 1px solid white;
+ 
 }
 #ghumne-wali-image{
     height: 26vw;
