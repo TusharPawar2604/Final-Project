@@ -271,33 +271,34 @@ function pinkBlueDivImageMoveAnimation (){
 
 
 function lineAndCursorWalaMarqeeAnimation(){
-  window.addEventListener("wheel", function(dets){
-    if(dets.deltaY > 0){
-      gsap.to("#hello",{
-        transform : "translateX(-50%)" ,
-        ease : "none" ,
-        repeat : -1 ,
-        duration :5
-      })
-      gsap.to("#hello img",{
-      rotate : 180 
-      })
-  
-    }
-    else{
-      gsap.to("#hello",{
-        transform : "translateX(0%)" ,
-        ease : "none" ,
-        repeat : -1 ,
-        duration :5
-      })
-      gsap.to("#hello img",{
-        rotate : 0
+  if (window.innerWidth > 768) { // Check if the screen width is greater than 768px (typical mobile screen width)
+    window.addEventListener("wheel", function(dets){
+      if(dets.deltaY > 0){
+        gsap.to("#hello",{
+          transform : "translateX(-50%)" ,
+          ease : "none" ,
+          repeat : -1 ,
+          duration :5
         })
-    }
-  })
-  
- }
+        gsap.to("#hello img",{
+        rotate : 180 
+        })
+    
+      }
+      else{
+        gsap.to("#hello",{
+          transform : "translateX(0%)" ,
+          ease : "none" ,
+          repeat : -1 ,
+          duration :5
+        })
+        gsap.to("#hello img",{
+          rotate : 0
+          })
+      }
+    })
+  }
+}
   
   
 // gsap.from("#page3 h1",{
