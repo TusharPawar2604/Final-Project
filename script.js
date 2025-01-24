@@ -76,7 +76,7 @@ function Page2TextAnimation(){
 var ello = middleText.split(" ")
 var hello = "";
 ello.forEach(function(dets){
-  hello += `<span>${dets}</span>`
+  hello += `<span> ${dets} </span>`
   document.querySelector(".middle-text h1").innerHTML = hello
 })
 
@@ -277,7 +277,7 @@ function lineAndCursorWalaMarqeeAnimation(){
         transform : "translateX(-50%)" ,
         ease : "none" ,
         repeat : -1 ,
-        duration :4
+        duration :5
       })
       gsap.to("#hello img",{
       rotate : 180 
@@ -289,7 +289,7 @@ function lineAndCursorWalaMarqeeAnimation(){
         transform : "translateX(0%)" ,
         ease : "none" ,
         repeat : -1 ,
-        duration :4
+        duration :5
       })
       gsap.to("#hello img",{
         rotate : 0
@@ -327,5 +327,6 @@ function lineAndCursorWalaMarqeeAnimation(){
  colorChangingEffect()
  pinkBlueDivImageMoveAnimation()
   lineAndCursorWalaMarqeeAnimation()
+
 
 

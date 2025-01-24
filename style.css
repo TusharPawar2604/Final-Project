@@ -134,6 +134,8 @@ font-family: brand;
     margin-top: 2vw;
     letter-spacing: 2px;
     font-family: brand1;
+    text-transform: capitalize;
+    /* word-spacing: 5px !important; */
 }
 .middle-text p{
     font-size: 1.2vw;
@@ -148,6 +150,7 @@ font-family: brand;
     padding: 15px 60px;
     border-radius: 25px;
     font-size: 1vw;
+    font-family: brand1;
     font-weight: 700;
     cursor: pointer;
     border: none;
@@ -234,6 +237,7 @@ padding: 0 3vw;
     padding: 15px 60px;
     border-radius: 25px;
     font-size: 1vw;
+    font-family: brand1;
     font-weight: 700;
     cursor: pointer;
     border: none;
@@ -245,8 +249,8 @@ padding: 0 3vw;
 }
 .para p{
   color: white;
-  font-family: brand;
   width: 40%;
+  font-family: brand;
   font-size: 2vw;
   letter-spacing: 0.5px;
 }
@@ -304,7 +308,7 @@ padding: 0 3vw;
 }
 
 #page5{
-   min-height: 100vh;
+   min-height: 65vh;
     width: 100%;    
 }
 #page5>h1{
@@ -468,4 +472,239 @@ footer span{
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+/* Example of a media query for smaller screens */
+@media (max-width: 768px) {
+    #page1{
+    min-height: 70vh;
+    }
+    .page1-text h1 {
+        font-size: 17vw; /* Adjust font size for smaller screens */
+        line-height: 15vw;
+        letter-spacing: 0vw;
+        bottom: 0;
+    }
+
+    .main-text{
+        position: absolute;
+        bottom: 5vw;
+    }
+    .middle-text h1 {
+        font-size: 5vw; /* Adjust font size for smaller screens */
+    }
+    #page2{
+        border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    }
+    .middle-text h1{
+        width: 100%; 
+        font-size: 8vw;
+        line-height: 5.3vh;
+    }
+    .middle-text p{
+        font-size: 6vw;
+        margin: 2vh 0vh 4vh 0vh;
+    }
+    .middle-text button{
+        margin-top: 6vw;
+        padding: 12px 45px;
+        font-size: 4vw;
+        font-weight: 700;
+    }
+    #string svg{
+        width: 100%;
+        margin-left: 0;
+        padding: 0; 
+    }
+    #page3{
+        min-height: 100vh;
+        width: 100%;
+        background-color: black;
+    }
+    #page3>h1{
+        font-size: 16vw;
+        line-height: 14vw;
+    }
+
+    .card {
+        width: 100%; /* Make cards full width on smaller screens */
+    }
+    .card h2{
+        font-size: 6vw;
+        font-weight: 100;
+    }
+    .card p{
+        font-size: 4vw;
+    }
+    .para{
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0 10vw;
+    gap: 5vw;
+    }
+    
+    .para button{
+        font-size: 4vw;
+        margin-top: 5vw;
+    }
+    .para p{
+      font-family: brand1;
+      width: 100%;
+      font-size: 8vw;
+    }
+    #page4{
+        padding: 10vw 0 0 2vw;
+        min-height: 70vh;
+    }
+    #page4>h1{
+        font-size: 13vw;
+        line-height: 10vw;
+    }
+    .element h2{
+        font-size: 6vw;
+    }
+    #logoos{
+        display: flex;
+        gap: 6vw;
+       }
+       #logoos img{
+           height: 6vw;
+       }
+       #logo-div{
+        flex-direction: column;
+         padding-bottom: 15vw;
+       }
+       #line-wala-effect{
+        
+       }
+       #page6 #pink-wala-div{
+        flex-direction: column;
+        height: 70vh;
+        margin-top: 3vw;
+        width: 100%;
+        border-top: 1px solid gray;
+        /* background-color: red; */
+        display: flex;
+        align-items: flex-start;
+        justify-content:flex-start;
+        padding: 0px 0vw 0px 10vw;
+        gap: 2vw;
+        
+    }
+       #pink-ka-left-div h3 span{
+        padding: 2vw 4vw;
+        border-radius: 25px;
+        border: 1px solid gray;
+   }
+   #pink-ka-left-div h3{
+       display: flex;
+       margin-top: 2vw;
+       align-items: center;
+       gap: 3vw;
+   }
+   #pink-ka-left-div h2{
+       font-size: 6vw;
+       font-family: brand1;
+       line-height: 4vh;
+   }
+   #pink-ka-left-div h4{
+       margin-top: 1vw;
+       font-size: 4vw;
+       opacity: 0.8;
+   }
+   #pink-ka-right-div p{
+       font-size: 6vw;
+       font-family: brand1;
+       width: 100%;
+       margin-top: 3vw;
+       line-height: 4vh;
+   }
+   .nav-part2{
+display: none;
+   }
+    #footer-upper {
+        flex-direction: column; /* Stack footer elements vertically */
+        align-items: center; /* Center align the items */
+        text-align: center; /* Center text alignment */
+        padding: 5vw 2vw; /* Adjust padding for better spacing */
+    }
+    #ghumne-wali-image {
+    display: none;
+    }
+
+    footer h1 {
+        margin-bottom: 2vw;
+        font-size: 2.5vw; /* Add some space between footer items */
+    }
+
+    footer span {
+        display: block; /* Ensure the span is on a new line */
+        margin-top: 0vw; /* Add some space above the span */
+    }
+    #page7{
+        min-height: 50vh;
+        width: 100%;
+        background-color: #000000;
+        color: white;
+    }
+    #footer-upper{
+        height: 50vh;
+        width: 100%;
+        font-family: brand;
+        padding: 10vw 5vw;
+        align-items: start;
+        justify-content: space-between;
+        display: flex;
+    }
+    #footer-upper-first{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    #follow-us{
+        gap: 2vw;
+        align-items: flex-start;
+    }
+    #follow-us h1{
+    color: #D9FF06;
+    font-size: 5vw;
+    }
+    #follow-us h2{
+        font-size: 4vw;
+        margin-top: 1vw;
+    }
+    #navigation{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5vw;
+    }
+    #navigation h1{
+        color: #D9FF06;
+        font-size: 5vw;
+    }
+    #navigation h2{
+    margin-top: 1vw;
+    font-size: 4vw;
+    }
+    #footer-upper-second h1{
+     font-size: 6vw;
+     margin-bottom: 1.5vw;
+     border-bottom: 1px solid rgb(255, 255, 255);
+    }
+    footer{
+        display: flex;
+        padding: 5vw 5vw ;
+        font-family: brand;
+        align-items: center;
+        justify-content: space-between;
+    }
+    footer h1 {
+        text-align: center;
+        font-size: 3vw;
+    }
+    footer span{
+     border-bottom: 1px solid white;
+     
+    }
 }
