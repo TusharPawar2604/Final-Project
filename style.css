@@ -476,6 +476,9 @@ footer span{
 
 /* Example of a media query for smaller screens */
 @media (max-width: 768px) {
+    nav svg {
+        height: 12vw;
+    }
     #page1{
     min-height: 70vh;
     }
