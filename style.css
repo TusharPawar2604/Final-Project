@@ -476,7 +476,7 @@ footer span{
 
 /* Example of a media query for smaller screens */
 @media (max-width: 768px) {
-    #cursor{
+    .cursor{
         display: none;
     }
     nav svg {
